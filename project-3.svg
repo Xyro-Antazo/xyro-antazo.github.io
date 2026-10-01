@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#27272a" />
+    </linearGradient>
+  </defs>
+  <!-- Background window -->
+  <rect width="600" height="380" rx="16" fill="url(#p3Grad)" />
+  <!-- Browser Chrome Bar -->
+  <rect width="600" height="42" rx="16" fill="#27272a" />
+  <circle cx="28" cy="21" r="6" fill="#ef4444" />
+  <circle cx="48" cy="21" r="6" fill="#f59e0b" />
+  <circle cx="68" cy="21" r="6" fill="#10b981" />
+  <rect x="110" y="10" width="380" height="22" rx="6" fill="#18181b" />
+  <text x="130" y="26" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="11">servicedesk.it/admin-tickets</text>
+
+  <!-- Kanban Column 1: Open -->
+  <rect x="24" y="60" width="170" height="300" rx="8" fill="#27272a" />
+  <rect x="36" y="74" width="80" height="18" rx="4" fill="#ef4444" opacity="0.3" />
+  <text x="44" y="87" fill="#f87171" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">PENDING (3)</text>
+  
+  <rect x="36" y="104" width="146" height="70" rx="6" fill="#18181b" />
+  <text x="46" y="122" fill="#f4f4f5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">#TK-104: Network Down</text>
+  <text x="46" y="140" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="10">Lab 3 Switch Gateway Issue</text>
+  <rect x="46" y="152" width="45" height="14" rx="3" fill="#ef4444" />
+  <text x="52" y="163" fill="#fff" font-family="system-ui, sans-serif" font-size="9">Urgent</text>
+
+  <rect x="36" y="184" width="146" height="70" rx="6" fill="#18181b" />
+  <text x="46" y="202" fill="#f4f4f5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">#TK-105: OS Reinstall</text>
+  <text x="46" y="220" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="10">Faculty PC 12 Boot Error</text>
+  <rect x="46" y="232" width="40" height="14" rx="3" fill="#eab308" />
+  <text x="52" y="243" fill="#000" font-family="system-ui, sans-serif" font-size="9">Medium</text>
+
+  <!-- Kanban Column 2: In Progress -->
+  <rect x="214" y="60" width="170" height="300" rx="8" fill="#27272a" />
+  <rect x="226" y="74" width="96" height="18" rx="4" fill="#3b82f6" opacity="0.3" />
+  <text x="234" y="87" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">IN PROGRESS (2)</text>
+
+  <rect x="226" y="104" width="146" height="70" rx="6" fill="#18181b" />
+  <text x="236" y="122" fill="#f4f4f5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">#TK-102: DB Migration</text>
+  <text x="236" y="140" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="10">MySQL 8.0 Table backup</text>
+  <rect x="236" y="152" width="38" height="14" rx="3" fill="#3b82f6" />
+  <text x="242" y="163" fill="#fff" font-family="system-ui, sans-serif" font-size="9">In Dev</text>
+
+  <!-- Kanban Column 3: Resolved -->
+  <rect x="404" y="60" width="170" height="300" rx="8" fill="#27272a" />
+  <rect x="416" y="74" width="90" height="18" rx="4" fill="#10b981" opacity="0.3" />
+  <text x="424" y="87" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">RESOLVED (18)</text>
+
+  <rect x="416" y="104" width="146" height="70" rx="6" fill="#18181b" />
+  <text x="426" y="122" fill="#f4f4f5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">#TK-098: RFID Scanner</text>
+  <text x="426" y="140" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="10">Driver update &amp; calibrated</text>
+  <rect x="426" y="152" width="46" height="14" rx="3" fill="#10b981" />
+  <text x="432" y="163" fill="#fff" font-family="system-ui, sans-serif" font-size="9">Closed</text>
+</svg>
