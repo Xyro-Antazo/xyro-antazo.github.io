@@ -205,19 +205,47 @@ function initContactForm() {
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
 
-      // Simulate sending delay for realistic UX
-      setTimeout(() => {
+      // Send real message to Leonardo's email via FormSubmit AJAX
+      fetch('https://formsubmit.co/ajax/leonardoantazo821@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          subject: subjectInput.value.trim(),
+          message: messageInput.value.trim()
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
         form.reset();
 
         feedback.className = 'form-feedback success';
-        feedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Your message has been simulated successfully. For direct contact, please reach out via email.';
-        
+        feedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent directly to Leonardo. I will get back to you shortly!';
+        feedback.style.display = 'block';
+
         setTimeout(() => {
           feedback.style.display = 'none';
         }, 7000);
-      }, 700);
+      })
+      .catch(error => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        form.reset();
+
+        feedback.className = 'form-feedback success';
+        feedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you for reaching out! You can also email directly at <a href="mailto:leonardoantazo821@gmail.com" style="color:inherit;text-decoration:underline;">leonardoantazo821@gmail.com</a>.';
+        feedback.style.display = 'block';
+
+        setTimeout(() => {
+          feedback.style.display = 'none';
+        }, 7000);
+      });
     }
   });
 
