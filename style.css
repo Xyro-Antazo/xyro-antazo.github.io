@@ -1,17 +1,9 @@
-/* ==========================================================================
-   3rd Year BSIT Portfolio Website Stylesheet
-   Crafted with modern CSS variables, Flexbox, Grid, & Smooth Transitions
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   1. CSS Custom Properties / Color Themes
-   -------------------------------------------------------------------------- */
 :root {
-  /* Fonts */
+  
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Theme Defaults: Dark Mode (Default) */
+  
   --bg-body: #0a0f1d;
   --bg-surface: #111827;
   --bg-surface-elevated: #1f293d;
@@ -48,7 +40,6 @@
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Light Theme Variables */
 body[data-theme="light"] {
   --bg-body: #f8fafc;
   --bg-surface: #ffffff;
@@ -75,9 +66,6 @@ body[data-theme="light"] {
   --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.1);
 }
 
-/* --------------------------------------------------------------------------
-   2. Reset & Global Styles
-   -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -120,9 +108,6 @@ button, input, textarea {
   color: inherit;
 }
 
-/* --------------------------------------------------------------------------
-   3. Layout Utilities
-   -------------------------------------------------------------------------- */
 .container {
   width: 100%;
   max-width: 1180px;
@@ -173,7 +158,6 @@ button, input, textarea {
   -webkit-text-fill-color: transparent;
 }
 
-/* Utility Badges & Colors */
 .text-cyan { color: var(--accent-cyan); }
 .text-purple { color: var(--accent-purple); }
 .text-yellow { color: var(--accent-yellow); }
@@ -182,9 +166,6 @@ button, input, textarea {
 .text-indigo { color: var(--accent-indigo); }
 .text-accent { color: var(--accent-cyan); font-weight: 600; }
 
-/* --------------------------------------------------------------------------
-   4. Buttons & Interactive Elements
-   -------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -263,9 +244,6 @@ button, input, textarea {
   transform: scale(1.05);
 }
 
-/* --------------------------------------------------------------------------
-   5. Navigation Bar
-   -------------------------------------------------------------------------- */
 .navbar {
   position: fixed;
   top: 0;
@@ -399,9 +377,6 @@ body[data-theme="light"] .navbar {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* --------------------------------------------------------------------------
-   6. Hero Section
-   -------------------------------------------------------------------------- */
 .hero-section {
   padding-top: calc(var(--nav-height) + 48px);
   padding-bottom: 64px;
@@ -508,7 +483,6 @@ body[data-theme="light"] .navbar {
   transform: translateY(-3px);
 }
 
-/* Avatar & Visual Column */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -595,7 +569,6 @@ body[data-theme="light"] .navbar {
   100% { transform: translateY(-8px); }
 }
 
-/* Metrics Grid */
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -634,9 +607,6 @@ body[data-theme="light"] .navbar {
   color: var(--text-secondary);
 }
 
-/* --------------------------------------------------------------------------
-   7. About Section
-   -------------------------------------------------------------------------- */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -687,7 +657,6 @@ body[data-theme="light"] .navbar {
   color: var(--text-secondary);
 }
 
-/* Timeline */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -739,9 +708,6 @@ body[data-theme="light"] .navbar {
   line-height: 1.55;
 }
 
-/* --------------------------------------------------------------------------
-   8. Skills Section
-   -------------------------------------------------------------------------- */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -814,9 +780,6 @@ body[data-theme="light"] .navbar {
   border-color: var(--accent-cyan);
 }
 
-/* --------------------------------------------------------------------------
-   9. Projects Section
-   -------------------------------------------------------------------------- */
 .project-filters {
   display: flex;
   justify-content: center;
@@ -981,9 +944,6 @@ body[data-theme="light"] .navbar {
   color: var(--accent-cyan);
 }
 
-/* --------------------------------------------------------------------------
-   10. Certifications Section
-   -------------------------------------------------------------------------- */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1047,9 +1007,6 @@ body[data-theme="light"] .navbar {
   color: var(--accent-emerald);
 }
 
-/* --------------------------------------------------------------------------
-   11. Contact Section & Form
-   -------------------------------------------------------------------------- */
 .contact-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -1148,7 +1105,6 @@ body[data-theme="light"] .navbar {
   border-color: var(--accent-cyan);
 }
 
-/* Form Styles */
 .contact-form-panel {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
@@ -1222,9 +1178,6 @@ body[data-theme="light"] .navbar {
   border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
-/* --------------------------------------------------------------------------
-   12. Footer
-   -------------------------------------------------------------------------- */
 .footer {
   padding: 36px 0;
   border-top: 1px solid var(--border-color);
@@ -1263,9 +1216,6 @@ body[data-theme="light"] .navbar {
   color: var(--accent-cyan);
 }
 
-/* --------------------------------------------------------------------------
-   13. Responsive Media Queries
-   -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -1346,9 +1296,6 @@ body[data-theme="light"] .navbar {
   }
 }
 
-/* --------------------------------------------------------------------------
-   14. Animations
-   -------------------------------------------------------------------------- */
 @keyframes fadeInUp {
   from {
     opacity: 0;

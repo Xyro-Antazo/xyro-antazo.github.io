@@ -1,8 +1,3 @@
-/**
- * 3rd Year BSIT Portfolio Website Scripts
- * Modern Vanilla JavaScript for Theme Switching, Navigation, Project Filtering, and Form Validation
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initMobileNav();
@@ -11,9 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
 });
 
-/* --------------------------------------------------------------------------
-   1. Theme Switcher (Dark / Light Mode)
-   -------------------------------------------------------------------------- */
 function initTheme() {
   const themeToggleBtn = document.getElementById('theme-toggle');
   if (!themeToggleBtn) return;
@@ -22,7 +14,6 @@ function initTheme() {
   const savedTheme = localStorage.getItem('portfolio-theme');
   const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
 
-  // Initial theme determination
   const initialTheme = savedTheme || (prefersLight ? 'light' : 'dark');
   applyTheme(initialTheme);
 
@@ -47,9 +38,6 @@ function initTheme() {
   }
 }
 
-/* --------------------------------------------------------------------------
-   2. Mobile Navigation & Drawer
-   -------------------------------------------------------------------------- */
 function initMobileNav() {
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const navMenu = document.getElementById('nav-menu');
@@ -63,7 +51,6 @@ function initMobileNav() {
     navMenu.classList.toggle('open');
   });
 
-  // Close menu when clicking any nav link
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       hamburgerBtn.classList.remove('active');
@@ -71,7 +58,6 @@ function initMobileNav() {
     });
   });
 
-  // Close when clicking outside of menu
   document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
       hamburgerBtn.classList.remove('active');
@@ -80,23 +66,18 @@ function initMobileNav() {
   });
 }
 
-/* --------------------------------------------------------------------------
-   3. Navbar Scroll Shadow & Active Link Spy
-   -------------------------------------------------------------------------- */
 function initScrollEffects() {
   const navbar = document.getElementById('navbar');
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
 
   window.addEventListener('scroll', () => {
-    // Add shadow on scroll
     if (window.scrollY > 30) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    // Scroll Spy for active navigation highlight
     let currentSection = '';
     const scrollPosition = window.scrollY + 120;
 
@@ -117,9 +98,6 @@ function initScrollEffects() {
   });
 }
 
-/* --------------------------------------------------------------------------
-   4. Project Filtering
-   -------------------------------------------------------------------------- */
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
@@ -128,7 +106,6 @@ function initProjectFilters() {
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Update active button styling
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
@@ -148,9 +125,6 @@ function initProjectFilters() {
   });
 }
 
-/* --------------------------------------------------------------------------
-   5. Interactive Contact Form Validation
-   -------------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById('portfolio-contact-form');
   const feedback = document.getElementById('form-feedback');
@@ -167,7 +141,6 @@ function initContactForm() {
     const subjectInput = document.getElementById('contact-subject');
     const messageInput = document.getElementById('contact-message');
 
-    // Name Validation
     if (!nameInput.value.trim()) {
       showError(nameInput);
       isValid = false;
@@ -175,7 +148,6 @@ function initContactForm() {
       clearError(nameInput);
     }
 
-    // Email Validation
     if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
       showError(emailInput);
       isValid = false;
@@ -183,7 +155,6 @@ function initContactForm() {
       clearError(emailInput);
     }
 
-    // Subject Validation
     if (!subjectInput.value.trim()) {
       showError(subjectInput);
       isValid = false;
@@ -191,7 +162,6 @@ function initContactForm() {
       clearError(subjectInput);
     }
 
-    // Message Validation
     if (!messageInput.value.trim()) {
       showError(messageInput);
       isValid = false;
@@ -205,7 +175,6 @@ function initContactForm() {
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
 
-      // Send real message to Leonardo's email via FormSubmit AJAX
       fetch('https://formsubmit.co/ajax/leonardoantazo821@gmail.com', {
         method: 'POST',
         headers: {
@@ -249,7 +218,6 @@ function initContactForm() {
     }
   });
 
-  // Clear error state on input
   [
     document.getElementById('contact-name'),
     document.getElementById('contact-email'),
